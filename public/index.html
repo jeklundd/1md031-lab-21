@@ -1,1 +1,137 @@
-Hello world
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Burger Paradise</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;"> Welcome to BurgerParadise&reg; Online <img src="https://cdn.dribbble.com/users/221544/screenshots/1796747/bob_sflyingburger.png" style="width:60px;height:60px;margin:30px 0px 0px 10px;">
+        </h1>
+        <br />
+        <h3> Please select a burger from our menu below </h3>
+        <div> We got three different delicious burgers for you to choose from</div>
+        <br />
+    </header>
+
+    <main>
+
+        <section>
+            <div style="float:left;margin:0px 80px 0px 0px;">
+            <h4 style="text-align:center;">The AAAlright Burger</h4>
+            <img src="https://media.istockphoto.com/photos/simple-meat-burger-isolated-on-white-picture-id157696235?k=20&m=157696235&s=612x612&w=0&h=TPt9k5_wnVo7QE4ZO2T_ERWtkRgurCgZWCrIBNUaxGk=" alt="The AAAlright Burger" style="width:200px;height:210px;">
+            <h5> Burger Information</h5>
+                <ul>
+                    <li>470 kcal</li>
+                    <li>Contains meat</li>
+                    <li>Contains lactose</li>
+                </ul>
+            </div>
+
+                  <div style="float:left;clear:right;margin:0px 80px 0px 0px;" >
+                    <h4 style="text-align:center;"> The Juicy Burger</h4>
+                    <img src="https://www.realgreekrecipes.com/wp-content/uploads/2017/09/Greek-Burger.jpg" alt="The Juicy Burger" style="width:200px;height:210px;">
+                    <h5> Burger Information</h5>
+                        <ul>
+                            <li>990 kcal</li>
+                            <li>Contains soy</li>
+                            <li>Contains lactose</li>
+                            <li>Juice</li>
+                        </ul>
+                  </div>
+
+                        <div style="float:left;clear:right;">
+
+                            <h4 style="text-align:center";> The LuxurySuperVIP Burger</h4>
+                            <img src="https://i.insider.com/593849304cb1e4381501cbe8?width=1000&format=jpeg&auto=webp" alt="The LuxurySuperVIP Burger" style="width:200px;height:210px;">
+                            <h5>Burger Information</h5>
+                            <ul>
+                                <li>1500 kcal</li>
+                                <li>Contains meat</li>
+                                <li>Contains lactose</li>
+                                <li>And so much more (!)</li>
+                            </ul>
+                        </div>
+
+        </section>
+
+        <section>
+
+            <div style="clear:left;">
+                <br />
+            <h2>Customer Information</h2>
+            </div>
+            <form>
+                <h4>All fields below must be filled in to complete your order</h4>
+
+                <p>
+                    <label for="fullname">Full name</label><br>
+                    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name">
+                </p>
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="text" id="email" name="em" placeholder="E-mail adress">
+                </p>
+                <p>
+                    <label for="street">Street</label><br>
+                    <input type="text" id="street" name="st" required="required" placeholder="Street name">
+                </p>
+                <p>
+                    <label for="house">House</label><br>
+                    <input type="number" id="house" name="ho" required="required" placeholder="House number">
+                </p>
+                <p>
+                    <label>Övrig information (max 50 ord)</label><br>
+                    <textarea id="texta" name="ar"   placeholder="Write here" rows="4" cols="50" maxlength="30"></textarea>
+                </p>
+
+                <p>
+                    <label>How to pay:</label><be>
+                    <select id="recipient" name="rcp"  value="recipient">
+                        <option>Sten Sax Påse</option>
+                        <option>MasterCard</option>
+                        <option>Byteshandel</option>
+                        <option>Swish</option>
+                    </select>
+                </be>
+                </p>
+
+                <div>
+                <input type="radio" id="male" name="sex" value="male">
+                <label for="male">Male</label>
+                </div>
+
+                <div>
+                <input type="radio"  id="female" name="sex" value="female">
+                <label for="female">Female</label>
+                </div>
+
+                <div>
+                <input type="radio"  id="nonbinary" name="sex" value="nonbinary">
+                <label for="nonbinary">Non-binary</label>
+                </div>
+
+                <div>
+                <input type="radio"  id="nan" name="sex" value="nan">
+                <label for="nan">Undisclosed</label>
+                </div>
+
+            </form>
+
+            <p>
+            <button type="submit">
+                <img src="https://www.iconninja.com/files/148/341/227/telegram-send-chat-media-message-icon.svg" style="height:15px;width:15px">
+                Send Info
+            </button>
+            </p>
+
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+
+       &copy; 2021 BPO - A delicius burger provider near you
+    </footer>
+</body>
+</html>
