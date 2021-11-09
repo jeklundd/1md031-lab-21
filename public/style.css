@@ -1,1 +1,99 @@
-/*empty*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+.allergi {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FF0000;
+}
+
+#header{
+    height: 325px;
+    width: 100%;
+    overflow: hidden;
+}
+#headtxt{
+    position: absolute;
+    margin-top:-250px;
+    color: lightblue;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size:43px;
+}
+#headtxt2 {
+    position: absolute;
+    color: lightblue;
+    margin-left: 35px;
+    margin-top: -180px;
+    font-size:25px;
+}
+#headimg{
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 20px 20px 20px 20px; 
+}
+
+#burgersection{
+    margin-bottom: 40px;
+    background-color: blanchedalmond;
+    border-radius: 20px 20px 20px 20px;
+}
+#submitsection{
+    clear:both;
+    background-color:lightblue;
+    color:white;
+    border:6px Dotted #FAEBD7;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#formcustomer{
+    padding-left:15px;
+}
+
+button:hover {
+    background-color:green;
+    cursor: grab;
+}
+
+#button{
+    margin-top:10px;
+    margin-left:20px;
+    margin-bottom:15px;
+}
+.wrapper {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 400px 400px 400px;
+    
+}
+.burgerhead{
+    grid-column: 1 / span3;
+    grid-row:1;
+    margin-left: 40px;
+}
+.alright {
+    grid-column: 1;
+    grid-row:2;
+    margin: 0px 60px 30px 60px;
+}
+.juicy {
+    grid-column:2;
+    grid-row:2;
+    margin: 0px 60px 30px 60px;
+}
+.VIP {
+    grid-column: 3;
+    grid-row:2;
+    margin: 0px 60px 30px 60px;
+}
+
+
+
+
+
+
