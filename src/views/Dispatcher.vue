@@ -49,7 +49,7 @@ export default {
   position: relative;
   margin: 0;
   padding: 0;
-  background: url(/img/polacks.jpg);
+  background: url('../img/polacks.jpg');
   background-repeat: no-repeat;
   width:1920px;
   height: 1078px;

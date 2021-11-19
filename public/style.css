@@ -10,49 +10,55 @@ body {
     color: #FF0000;
 }
 
-#header{
-    height: 325px;
-    width: 100%;
-    overflow: hidden;
-}
 #headtxt{
     position: absolute;
-    margin-top:-250px;
+    margin-top:-20%;
     color: lightblue;
-    margin-left: 15px;
+    margin-left: 0.5em;
     font-weight: bold;
-    font-size:43px;
+    font-size:2.6em;
 }
 #headtxt2 {
     position: absolute;
     color: lightblue;
-    margin-left: 35px;
-    margin-top: -180px;
-    font-size:25px;
+    margin-left: 1.5em;
+    margin-top: -14%;
+    font-size:1.5em;
 }
 #headimg{
-    opacity: 1;
     width: 100%;
     height: auto;
     vertical-align: middle;
-    border-radius: 20px 20px 20px 20px; 
+    border-radius: 2em 2em 2em 2em;
+}
+#flyingburger{
+    position: absolute;
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+    top: 11.5em;
+    left: 30em;
 }
 
 #burgersection{
-    margin-bottom: 40px;
-    background-color: blanchedalmond;
-    border-radius: 20px 20px 20px 20px;
+    background-color: #FAEBD7;
+    border-radius: 2em 2em 2em 2em;
+}
+.burgerimg{
+    border-radius: 2em 2em 2em 2em;
+    width:17em;
+    height:17em;
 }
 #submitsection{
     clear:both;
     background-color:lightblue;
     color:white;
-    border:6px Dotted #FAEBD7;
-    border-radius: 20px 20px 20px 20px;
+    border:0.5em Dotted #FAEBD7;
+    border-radius: 2em 2em 2em 2em;
 }
 
 #formcustomer{
-    padding-left:15px;
+    padding-left:1.5em;
 }
 
 button:hover {
@@ -61,35 +67,35 @@ button:hover {
 }
 
 #button{
-    margin-top:10px;
-    margin-left:20px;
-    margin-bottom:15px;
+    margin-top:1.5em;
+    margin-left:1.5em;
+    margin-bottom:1.5em;
 }
 .wrapper {
     display: grid;
-    grid-gap: 40px;
-    grid-template-columns: 400px 400px 400px;
-    
+    grid-gap: 3em;
 }
 .burgerhead{
-    grid-column: 1 / span3;
+    grid-column: 1 / span 3;
     grid-row:1;
-    margin-left: 40px;
+    margin-left: 3em;
 }
 .alright {
     grid-column: 1;
     grid-row:2;
-    margin: 0px 60px 30px 60px;
+    margin: 0em 4em 0em 3em;
+
 }
 .juicy {
     grid-column:2;
     grid-row:2;
-    margin: 0px 60px 30px 60px;
+    margin: 0em 4em 0em 3em;
+
 }
 .VIP {
     grid-column: 3;
     grid-row:2;
-    margin: 0px 60px 30px 60px;
+    margin: 0em 4em 0em 4em;
 }
 
 
