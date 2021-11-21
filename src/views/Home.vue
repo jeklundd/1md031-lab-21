@@ -28,9 +28,13 @@
 
     <section id="submitsection">
       <div class="wrapmap">
-      <form id="formcustomer">
+
+        <div  id="customertext">
         <h2>Customer Information</h2>
         <h4 style="margin-bottom:2em">All fields below must be filled in to complete your order</h4>
+        </div>
+
+        <form id="formcustomer">
 
         <p>
           <span>Fullname</span><br>
@@ -84,24 +88,26 @@
         </div>
 
       </form>
-
-        <div id="mapntext">
-          <h2> Choose your delivery location:</h2>
-          <div id="map" v-on:click="position" >
-            <div id="dots" v-bind:style="{left: this.location.x + 'px',
-                                          top: this.location.y + 'px'}">
-                   T
-                   </div>
-                </div>
+        <div id="choosetext">
+        <h2 > Choose your delivery location:</h2>
+        <h4>The choosen location will be our drop site</h4>
         </div>
+
+          <div id="mapper">
+              <div id="map" v-on:click="setLocation" >
+                  <div id="dotted" v-bind:style="{left: this.location.x + 'px',
+                                                top:  this.location.y + 'px'}">
+                   T
+                  </div>
+              </div>
+          </div>
+
       </div>
 
-      <div>
-        <button id="button" type="submit" v-on:click="addOrder">
+        <button id="button" type="submit" v-on:click="submitClick">
           <img src="https://www.iconninja.com/files/148/341/227/telegram-send-chat-media-message-icon.svg" style="height:1.1em;width:1.1em">
           Place order
         </button>
-      </div>
 
     </section>
 
@@ -148,19 +154,15 @@ export default {
 
   data: function () {
     return {
-      burgers:menu,
+            burgers:menu,
       firstlastname:'',
-      email: '',
-      street: '',
-      house: '',
-      textarea: '',
-      pay: 'MasterCard',
-      sex: 'Undisclosed',
-      key: 'T',
+              email: '',
+           textarea: '',
+                pay: 'MasterCard',
+                sex: 'Undisclosed',
       location: { x: 0,
                   y: 0},
-      orderedBurgers: Object
-
+      orderedBurger: '',
     }
   },
 
@@ -168,45 +170,39 @@ export default {
     done: function () {
 
     },
+
     addToOrder: function (event) {
-      this.orderedBurgers[event.name] = event.amount;
-      console.log(this.orderedBurgers)
-      return this.orderedBurgers
+     return this.orderedBurger[event.name] = event.amount;
     },
 
     getOrderNumber: function () {
       return Math.floor(Math.random() * 100000);
     },
 
-    customerInfo: function () {
-      let form = [this.firstlastname, this.email, this.street,
-        this.house, this.textarea, this.sex]
-      return form
-    },
-
-    position: function (event) {
-      let offset = {x: event.currentTarget.getBoundingClientRect().left,
-                    y: event.currentTarget.getBoundingClientRect().top};
+    setLocation: function (event) {
+      let offset = {
+        x: event.currentTarget.getBoundingClientRect().left,
+        y: event.currentTarget.getBoundingClientRect().top
+      };
       this.location.x = event.clientX - 10 - offset.x
       this.location.y = event.clientY - 10 - offset.y
-
-    }
-  },
-
-    addOrder: function (event) {
-      var offset = {x: event.currentTarget.getBoundingClientRect().left,
-                    y: event.currentTarget.getBoundingClientRect().top};
-      socket.emit("addOrder", { orderId: this.getOrderNumber(),
-                                details: { x: event.clientX - 10 - offset.x,
-                                           y: event.clientY - 10 - offset.y },
-                                orderItems:["beans", "curry"],
-                                orderInfo: this.customerInfo(),
-                                orderBurger: this.addToOrder()
-
-                              }
-                 );
     },
 
+    submitClick: function () {
+      socket.emit("addOrder", {
+               orderId: this.getOrderNumber(),
+            details:{x: this.location.x,
+                     y: this.location.y,
+                  name: this.firstlastname,
+                 email: this.email,
+              textarea: this.textarea,
+                gender: this.sex},
+            orderItems: this.orderedBurger
+          },
+
+      );
+    },
+  }
   }
 
 </script>
@@ -216,28 +212,27 @@ export default {
 
   #map {
     background: url("../img/polacks.jpg");
-    height: 100%;
-    width: 100%;
-    margin-top: 3%;
-    cursor: crosshair;
+    width: 1920px;
+    height: 1078px;
 
   }
-  #mapntext {
-    position: relative;
-    place-content: center;
+  #mapper {
     overflow: scroll;
-    width: 560px;
-    height: 500px;
+    position: relative;
+    grid-column:2;
+    width: 600px;
+    height: 400px;
     cursor: crosshair;
   }
-  #dots {
+  #dotted {
+    background-repeat: no-repeat;
     position: absolute;
-    border-radius: 10px;
     background: black;
+    color: red;
+    border-radius: 10px;
     width:20px;
     height:20px;
-    color: red;
-
+    text-align: center;
   }
 
   body {
@@ -247,8 +242,8 @@ export default {
   #header{
     height: 325em;
     width: 100%;
-
   }
+
   #headtxt{
     position: absolute;
     margin-top:-20%;
@@ -302,12 +297,22 @@ export default {
   }
   .wrapmap{
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+
+  }
+
+  #customertext {
+    grid-column: 1;
+    padding-left:1.5em;
+  }
+
+  #choosetext{
+    grid-column: 2;
   }
 
   #formcustomer{
     padding-left:1.5em;
+    grid-column: 1;
+    grid-row: 2;
   }
 
   #button:hover {

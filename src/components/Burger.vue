@@ -38,8 +38,8 @@ export default {
   methods: {
     increase: function () {
       this.amountOrdered += 1;
-      console.log(this.burger.name, this.amountOrdered)
-      this.$emit('increase', {
+
+      this.$emit('orderedBurger', {
             name: this.burger.name,
             amount: this.amountOrdered
           }
@@ -49,8 +49,8 @@ export default {
       if (this.amountOrdered > 0) {
         this.amountOrdered -= 1;
       }
-      console.log(this.burger.name, this.amountOrdered)
-      this.$emit('decrease', {
+
+      this.$emit('orderedBurger', {
             name: this.burger.name,
             amount: this.amountOrdered
           }
