@@ -19,7 +19,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{amountOrdered}}&nbsp;
     <input id="del" type="button" v-on:click="decrease($event)" value="Delete Burger"></span>
 
-
   </div>
 
 </template>
