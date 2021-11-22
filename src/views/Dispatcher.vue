@@ -8,7 +8,7 @@
         {{order.details.name}} <span id="text">(
         {{order.details.email}},
         {{order.details.gender}})</span> <br />
-        Special Information: {{order.details.textarea}}
+        Special Information: {{order.details.textarea}} <br />
       </div>
       <button v-on:click="clearQueue">Clear Queue</button>
     </div>

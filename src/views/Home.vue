@@ -54,7 +54,7 @@
         </p>-->
         <p>
           <span>Other information (max 50 words)</span><br>
-          <textarea v-model="textarea" placeholder="Write here" rows="4" cols="50" maxlength="30"></textarea>
+          <textarea v-model="textarea" placeholder="Write here" rows="4" cols="50" maxlength="50"></textarea>
         </p>
 
         <p>
@@ -90,13 +90,13 @@
       </form>
         <div id="choosetext">
         <h2 > Choose your delivery location:</h2>
-        <h4>The choosen location will be our drop site</h4>
+        <h4>The chosen location will be our drop site</h4>
         </div>
 
           <div id="mapper">
               <div id="map" v-on:click="setLocation" >
                   <div id="dotted" v-bind:style="{left: this.location.x + 'px',
-                                                top:  this.location.y + 'px'}">
+                                                   top:  this.location.y + 'px'}">
                    T
                   </div>
               </div>
@@ -162,7 +162,7 @@ export default {
                 sex: 'Undisclosed',
       location: { x: 0,
                   y: 0},
-      orderedBurger: '',
+      orderedBurger: {}
     }
   },
 
